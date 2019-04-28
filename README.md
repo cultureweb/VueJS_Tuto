@@ -2,7 +2,7 @@
 
 Throughout this course you will learn the fundamentals of Vue while we build this product page together. Campus Numérique in the ALPS
 
-![](images/product.gif)
+![](assets/images/product.gif)
 
 ## Prerequisites:
 
