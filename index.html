@@ -10,54 +10,15 @@
   <body>
     <div class="nav-bar"></div>
     <div id="app">
-      <div class="product">
-        <div class="product-image">
-          <img :src="image" :alt="description" />
-        </div>
-
-        <div class="product-info">
-          <h1>{{ brand }} {{ product }}</h1>
-
-          <p v-if="inStock">In Stock</p>
-
-          <p v-else-if="inStock > 0 && inStock < 10">
-            Almost sold Out, {{ inventory }} in stock
-          </p>
-          <p v-else :style="{ textDecoration: linethrough}">Out of Stock</p>
-          <div
-            class="color-box"
-            v-for="(variant, index) in variants"
-            :key="variant.variantId"
-            :style="{ backgroundColor: variant.variantColor }"
-            @mouseover="updateProduct(index)"
-          ></div>
-
-          <button
-            @click="addToCart"
-            :disabled="!inStock"
-            :class="{ disabledButton: !inStock}"
-          >
-            Add to Cart
-          </button>
-
-          <button @click="removeFromCart" class="">Remove</button>
-
-          <div class="cart">
-            <p>Cart({{ cart }})</p>
-          </div>
-          <ul>
-            <li v-for="detail in details">
-              {{ detail }}
-            </li>
-          </ul>
-          <ul>
-            <li v-for="size in sizes">{{ size }}</li>
-          </ul>
-          <p>{{ description }}</p>
-          <a :href="link" target="_blank">More products like this</a>
-        </div>
+      <div class="cart">
+        <p>Cart({{ cart.length }})</p>
       </div>
+      <product :premium="premium" @add-to-cart="updateCart"
+      @remove-from-cart="removeItem"
+      ></product>
+      
     </div>
+
     <script src="https://unpkg.com/vue@2.1.6/dist/vue.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
