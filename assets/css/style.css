@@ -3,6 +3,11 @@ body {
   color: #282828;
   margin: 0px;
 }
+.activeTab{
+  font-weight: bold;
+    color: #1dab53;
+    text-decoration: underline;
+}
 
 .nav-bar {
   background: linear-gradient(-90deg, #84cf6a, #16c0b0);
