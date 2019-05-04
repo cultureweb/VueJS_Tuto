@@ -24,6 +24,11 @@ img {
 .product-image {
   flex-basis: 700px;
 }
+.review {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #d8d8d8;
+}
 
 .product-info {
   margin-top: 10px;
@@ -58,7 +63,7 @@ button {
 }
 
 .review-form {
-  width: 30%;
+  width: 50%;
   padding: 20px;
   border: 1px solid #d8d8d8;
 }
